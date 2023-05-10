@@ -27,7 +27,9 @@ from game_manager import GameManager
 from database import db
 
 db.bind('sqlite', os.getenv('UNO_DB', 'uno.sqlite3'), create_db=True)
-db.generate_mapping(create_tables=True)
+# PostgreSQL
+#db.bind(provider='postgres', user='rivasmar_unobot', password='Tkq4875e*', host='ec2-54-83-36-37.compute-1.amazonaws.com', database='rivasmar_unobotpy')
+#db.generate_mapping(create_tables=True)
 
 gm = GameManager()
 updater = Updater(token=TOKEN, workers=WORKERS, use_context=True)
